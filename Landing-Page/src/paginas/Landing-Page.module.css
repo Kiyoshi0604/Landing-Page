@@ -2,64 +2,35 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    /* Tira as margens do navegador para remover a  possível borda branca que nem no último trabalho */
 }
 
-
 .container {
-    min-height: 100vh;
     width: 100%;
-    font-family: sans-serif;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding: 40px 20px;
-    background-image: linear-gradient(rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.75)), url('HxH.jpg');
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-color: #000000;
-    color: white;
 }
 
 .titulo {
-    color: #ff6600;
-    font-size: 2.5rem;
-    font-weight: 900;
-    margin-bottom: 5px;
-    text-align: center;
-}
-
-.subtitulo {
-    font-size: 1.1rem;
-    color: white;
-    opacity: 0.8;
-    font-weight: 500;
-    margin-bottom: 30px;
-    text-align: center;
-}
-
-.conteudoPrincipal {
-    flex: 1;
+    min-height: 100vh;
     display: flex;
-    flex-direction: column;
     justify-content: center;
     align-items: center;
-    text-align: center;
-    max-width: 800px;
-    width: 100%;
+    background-image:
+        linear-gradient(rgba(0, 0, 0, 0.75)),
+        url('src/assets/img/HxH.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
 }
 
-.auraPrincipal {
-    font-size: 3.2rem;
-    font-weight: 900;
-    margin-bottom: 20px;
-    line-height: 1.2;
+.logoTitulo {
+    width: 650px;
+    max-width: 90%;
+    height: auto;
 }
 
-.aura {
-    font-size: 1.6rem;
-    font-weight: 400;
-    color: #e5e5e5;
-    line-height: 1.4;
+.auraModal {
+    min-height: 100vh;
+    padding: 80px 20px;
+    display: flex;
+    justify-content: center;
+    background: black;
 }

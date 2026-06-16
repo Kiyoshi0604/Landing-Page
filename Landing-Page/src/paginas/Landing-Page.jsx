@@ -1,49 +1,62 @@
 import estilos from './Landing-Page.module.css';
 import { useState } from 'react';
 import { ModalLicenca } from '../componentes/ModalLicenca';
+import logo from '../assets/img/logo.png';
 
 export function LandingPage() {
 
-    const [modalMensagemVisivel, setModalMensagemVisivel] = useState(false)
+    const [modalMensagemVisivel, setModalMensagemVisivel] = useState(false);
+
+    const [modalMensagemTitulo, setModalMensagemTitulo] = useState('');
+    const [modalMensagemTexto, setModalMensagemTexto] = useState('');
 
     // Função para alternar a visibilidade do modal
     const exibirModal = (status) => {
-        setModalMensagemVisivel(status)
-    }
+        setModalMensagemVisivel(status);
+    };
 
     // Criação do componente de navegação
-    const navegacao = useNavigate()
+    // const navegacao = useNavigate()
 
     const autenticarUsuario = (e) => {
 
         // "Personalização" do modal
-        setModalMensagemTitulo('Autenticação')
+        setModalMensagemTitulo('Autenticação');
 
-        if(!email || !senha){
+        if (!email || !senha) {
             // "Personalização" do modal
-            setModalMensagemTexto(`Por favor, informe o e-mail e senha.`)
-        }else{
+            setModalMensagemTexto('Por favor, informe o e-mail e senha.');
+        } else {
             // Navega para a página principal
-            navegacao('principal')
+            // navegacao('principal')
         }
-        
+
         // Exibe o modal
-        exibirModal(true)
-        
-        e.preventDefault()
-    }
+        exibirModal(true);
+
+        e.preventDefault();
+    };
 
     return (
         <div className={estilos.container}>
-            <h1 className={estilos.titulo}>Hunter x Hunter</h1>
-            <p className={estilos.subtitulo}>João Paulo e Enzo Basso - 2 DSA</p>
 
+        <section className={estilos.titulo}>
+            <img
+                src={logo}
+                alt="Hunter x Hunter"
+                className={estilos.logoTitulo}
+            />
+        </section>
+
+        <section className={estilos.auraModal}>
             <ModalLicenca
                 visivel={modalMensagemVisivel}
-                exibir={() => exibirModal()}
+                exibir={() => exibirModal(false)}
                 titulo={modalMensagemTitulo}
                 texto={modalMensagemTexto}
             />
-        </div>
-    )
+        </section>
+
+    </div>
+    );
 }
