@@ -1,0 +1,84 @@
+
+.page {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 40px 20px;
+    background: linear-gradient(180deg, #0b0b0b 0%, #141414 55%, #1c1c1c 100%);
+}
+
+.card {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    background: linear-gradient(180deg, #f8e7c3 0%, #f0d39b 60%, #d4b070 100%);
+    border: 3px solid #b1842a;
+    border-radius: 22px;
+    padding: 24px;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.25);
+    width: min(500px, 100%);
+}
+
+.cardHeader {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 12px 16px;
+    background: rgba(255, 241, 190, 0.85);
+    border-radius: 16px;
+    border: 1px solid rgba(177, 132, 42, 0.7);
+}
+
+.licencaBadge {
+    color: #3f2b0d;
+    font-weight: 700;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    font-size: 0.95rem;
+}
+
+.cardContent {
+    display: grid;
+    gap: 16px;
+}
+
+.field {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 14px 18px;
+    border-radius: 16px;
+    background: rgba(255, 255, 255, 0.72);
+    border: 1px dashed rgba(140, 95, 34, 0.65);
+}
+
+.fieldLabel {
+    color: #704f22;
+    font-weight: 700;
+    text-transform: uppercase;
+    font-size: 0.85rem;
+}
+
+.fieldValue {
+    color: #3f2b0d;
+    font-weight: 600;
+}
+
+.botao {
+    align-self: center;
+    padding: 12px 24px;
+    min-width: 120px;
+    border: 2px solid #b1842a;
+    border-radius: 999px;
+    background: #fff0c8;
+    color: #4d3210;
+    font-weight: 700;
+    cursor: pointer;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.botao:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+}

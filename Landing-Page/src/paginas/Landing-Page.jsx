@@ -1,62 +1,56 @@
 import estilos from './Landing-Page.module.css';
 import { useState } from 'react';
-import { ModalLicenca } from '../componentes/ModalLicenca';
 import logo from '../assets/img/logo.png';
 
-export function LandingPage() {
+export function LandingPage({ onSubmit }) {
+  const [nome, setNome] = useState('');
+  const [idade, setIdade] = useState('');
 
-    const [modalMensagemVisivel, setModalMensagemVisivel] = useState(false);
+  const handleSubmit = (event) => {
+    event.preventDefault();
+    onSubmit({ nome, idade });
+  };
 
-    const [modalMensagemTitulo, setModalMensagemTitulo] = useState('');
-    const [modalMensagemTexto, setModalMensagemTexto] = useState('');
+  return (
+    <div className={estilos.container}>
+      <section className={estilos.titulo}>
+        <img src={logo} alt="Hunter x Hunter" className={estilos.logoTitulo} />
+      </section>
 
-    // Função para alternar a visibilidade do modal
-    const exibirModal = (status) => {
-        setModalMensagemVisivel(status);
-    };
+      <section className={estilos.auraModal}>
+        <div className={estilos.conteiner}>
+          <p className={estilos.titulo}>Licença Hunter</p>
 
-    // Criação do componente de navegação
-    // const navegacao = useNavigate()
-
-    const autenticarUsuario = (e) => {
-
-        // "Personalização" do modal
-        setModalMensagemTitulo('Autenticação');
-
-        if (!email || !senha) {
-            // "Personalização" do modal
-            setModalMensagemTexto('Por favor, informe o e-mail e senha.');
-        } else {
-            // Navega para a página principal
-            // navegacao('principal')
-        }
-
-        // Exibe o modal
-        exibirModal(true);
-
-        e.preventDefault();
-    };
-
-    return (
-        <div className={estilos.container}>
-
-        <section className={estilos.titulo}>
-            <img
-                src={logo}
-                alt="Hunter x Hunter"
-                className={estilos.logoTitulo}
+          <form className={estilos.formulario} onSubmit={handleSubmit}>
+            <input
+              className={estilos.entrada}
+              placeholder="Nome"
+              value={nome}
+              onChange={(e) => setNome(e.target.value)}
             />
-        </section>
 
-        <section className={estilos.auraModal}>
-            <ModalLicenca
-                visivel={modalMensagemVisivel}
-                exibir={() => exibirModal(false)}
-                titulo={modalMensagemTitulo}
-                texto={modalMensagemTexto}
+            <input
+              className={estilos.entrada}
+              placeholder="Idade"
+              value={idade}
+              onChange={(e) => setIdade(e.target.value)}
             />
-        </section>
 
+            <button className={estilos.botao} type="submit">
+              Enviar
+            </button>
+          </form>
+
+          <div className={estilos.nav}>
+            <a href="#landing" className={estilos.link}>
+              Página inicial
+            </a>
+            <a href="#licenca" className={estilos.link}>
+              Página Licença
+            </a>
+          </div>
+        </div>
+      </section>
     </div>
-    );
+  );
 }
