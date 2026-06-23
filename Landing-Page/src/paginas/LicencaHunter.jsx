@@ -1,6 +1,51 @@
-import estilos from './LicencaHunter.module.css';
+import estilos from './LicencaHunter.module.css'
+import { useState } from 'react'
+// ERRO CORRIGIDO: Era 'react-dom', deveria ser 'react-router-dom'
+import { useNavigate } from 'react-router-dom'
+// ERRO CORRIGIDO: Importar ModalLicenca para exibir a licença com os dados
+import { ModalLicenca } from '../componentes/ModalLicenca'
 
-export function LicencaHunter({ nome = '', idade = '', nen = '', onBack }) {
+export function LicencaHunter() {
+  // ERRO: navigate não estava sendo importado corretamente
+  const navigate = useNavigate();
+  
+  const [nome, setNome]  = useState('');
+  const [idade, setIdade] = useState('');
+  const nen = ["Emissão", "Conjuração", "Transmutação", "Especialização", "Intensificação", "Manipulação"];
+
+    /* ALEATORIZAR VETOR E ESCOLHER 1 ITEM
+    const frutas = ["Maçã", "Banana", "Laranja", "Uva"];
+                            arredondar   aleatorio     quantidade de espacos no vetor
+    const indiceAleatorio = Math.floor(Math.random() * frutas.length);
+    const itemSorteado = frutas[indiceAleatorio];
+    */
+
+    const nenAleatorio = Math.floor(Math.random() * nen.length);
+    const nenEscolhido = nen[nenAleatorio];
+  
+  const [modalMensagemVisivel, setModalMensagemVisivel] = useState(false);
+
+  // ERRO CORRIGIDO: Função onBack não estava definida
+  const onBack = () => {
+    navigate('/');
+  };
+
+  // ERRO CORRIGIDO: Função autenticarUsuario com lógica completa
+  const autenticarUsuario = (e) => {
+    e.preventDefault();
+    // Validação simples
+    if(!nome || !idade){
+      alert('Por favor, informe nome e idade.');
+    } else {
+      // ERRO CORRIGIDO: Seleciona um Nen aleatório e exibe o modal
+      const nenAleatorioIndex = Math.floor(Math.random() * nen.length);
+      const nenSelecionado = nen[nenAleatorioIndex];
+      setNenEscolhido(nenSelecionado);
+      setModalMensagemVisivel(true);
+    }
+  };
+
+  
   return (
     <div className={estilos.page}>
       <div className={estilos.card}>
@@ -8,25 +53,44 @@ export function LicencaHunter({ nome = '', idade = '', nen = '', onBack }) {
           <span className={estilos.licencaBadge}>Licença Hunter</span>
         </div>
 
-        <div className={estilos.cardContent}>
-          <div className={estilos.field}>
-            <span className={estilos.fieldLabel}>Nome</span>
-            <span className={estilos.fieldValue}>{nome || '---'}</span>
-          </div>
-          <div className={estilos.field}>
-            <span className={estilos.fieldLabel}>Idade</span>
-            <span className={estilos.fieldValue}>{idade || '---'}</span>
-          </div>
-          <div className={estilos.field}>
-            <span className={estilos.fieldLabel}>Nen</span>
-            <span className={estilos.fieldValue}>{nen || '---'}</span>
-          </div>
-        </div>
+        {/* ERRO CORRIGIDO: Corrigi tag <forms> para <form> */}
+        <form onSubmit={autenticarUsuario}>
+          <input
+            placeholder='Nome'
+            value={nome}
+            onChange={(e) => setNome(e.target.value)}
+          />
+          <input
+            placeholder='Idade'
+            value={idade}
+            onChange={(e) => setIdade(e.target.value)}
+          />
+          {/* ERRO CORRIGIDO: Adicionado submit button */}
+          <button type="submit">
+            Gerar Licença
+          </button>
+        </form>
 
-        <button className={estilos.botao} onClick={onBack}>
-          Voltar para landing
+        {/* ERRO CORRIGIDO: Usar onClick com navigate em vez de href para funcionar com React Router */}
+        <button onClick={onBack} className={estilos.botao}>
+          Voltar para Landing
         </button>
+
       </div>
+
+      {/* ERRO CORRIGIDO: Adicionar ModalLicenca para exibir a licença com overlay */}
+      <ModalLicenca 
+        nome={nome}
+        idade={idade}
+        nen={nenEscolhido}
+        visivel={modalMensagemVisivel}
+        onClose={() => {
+          setModalMensagemVisivel(false);
+          setNome('');
+          setIdade('');
+          setNenEscolhido('');
+        }}
+      />
     </div>
   );
 }

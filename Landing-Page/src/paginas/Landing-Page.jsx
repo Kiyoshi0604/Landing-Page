@@ -1,5 +1,6 @@
 import estilos from './Landing-Page.module.css';
-import { useState } from 'react';
+// ERRO CORRIGIDO: Importar useNavigate para funcionar com React Router
+import { useNavigate } from 'react-router-dom';
 import logo from '../assets/img/logo.png';
 import h1 from '../assets/img/H1.jpeg';
 import h2 from '../assets/img/H2.webp';
@@ -11,14 +12,9 @@ import h7 from '../assets/img/H7.webp';
 import h8 from '../assets/img/H8.webp';
 import h9 from '../assets/img/H9.webp';
 
-export function LandingPage({ onSubmit }) {
-  const [nome, setNome] = useState('');
-  const [idade, setIdade] = useState('');
-
-  const handleSubmit = (event) => {
-    event.preventDefault();
-    onSubmit({ nome, idade });
-  };
+export function LandingPage() {
+  // ERRO CORRIGIDO: Adicionar useNavigate para navegação com React Router
+  const navigate = useNavigate();
 
   return (
     <div className={estilos.container}>
@@ -131,38 +127,15 @@ export function LandingPage({ onSubmit }) {
             Licença Hunter
           </h1>
 
-          <form
-            className={estilos.formulario}
-            onSubmit={handleSubmit}
-          >
-            <input
-              className={estilos.entrada}
-              placeholder="Nome"
-              value={nome}
-              onChange={(e) => setNome(e.target.value)}
-            />
 
-            <input
-              className={estilos.entrada}
-              placeholder="Idade"
-              value={idade}
-              onChange={(e) => setIdade(e.target.value)}
-            />
-
-            <button
-              className={estilos.botao}
-              type="submit"
-            >
-              Enviar
-            </button>
-          </form>
 
           <div className={estilos.nav}>
-            <a href="#landing" className={estilos.link}>
-              Página Inicial
-            </a>
-
-            <a href="#licenca" className={estilos.link}>
+            {/* ERRO CORRIGIDO: Usar onClick com navigate em vez de href para funcionar com React Router */}
+            <a 
+              onClick={() => navigate('/licenca')} 
+              className={estilos.link}
+              style={{ cursor: 'pointer' }}
+            >
               Página Licença
             </a>
           </div>

@@ -1,47 +1,12 @@
-import { useEffect, useState } from 'react';
-import { LandingPage } from './paginas/Landing-Page.jsx';
-import { LicencaHunter } from './paginas/LicencaHunter.jsx';
+import { BrowserRouter } from 'react-router-dom';
+import { Rotas } from './rotas/Rotas.jsx';
 
+// ERRO CORRIGIDO: BrowserRouter adicionado aqui (deve estar apenas no nível mais alto)
 function App() {
-  const [page, setPage] = useState(window.location.hash.replace('#', '') || 'landing');
-  const [licenca, setLicenca] = useState({ nome: '', idade: '', nen: '' });
-
-  useEffect(() => {
-    const handleHashChange = () => {
-      setPage(window.location.hash.replace('#', '') || 'landing');
-    };
-
-    window.addEventListener('hashchange', handleHashChange);
-    return () => window.removeEventListener('hashchange', handleHashChange);
-  }, []);
-
-  const navigate = (nextPage) => {
-    window.location.hash = nextPage;
-  };
-
-  const handleSubmit = (formData) => {
-    const nenList = [
-      'Emissão',
-      'Conjuração',
-      'Transmutação',
-      'Especialização',
-      'Intensificação',
-      'Manipulação',
-    ];
-    const indiceAleatorio = Math.floor(Math.random() * nenList.length);
-    setLicenca({ ...formData, nen: nenList[indiceAleatorio] });
-    navigate('licenca');
-  };
-
-  return page === 'licenca' ? (
-    <LicencaHunter
-      nome={licenca.nome}
-      idade={licenca.idade}
-      nen={licenca.nen}
-      onBack={() => navigate('landing')}
-    />
-  ) : (
-    <LandingPage onSubmit={handleSubmit} />
+  return (
+    <BrowserRouter>
+      <Rotas />
+    </BrowserRouter>
   );
 }
 
