@@ -9,7 +9,7 @@
     background: black;
 }
 
-.sigma {
+.inicio {
     min-height: 100vh;
     display: flex;
     justify-content: center;
@@ -25,33 +25,35 @@
     background-repeat: no-repeat;
 }
 
+/* tive a ideia de fundo estrelado, pesquisei sobre */
+.estrelado {
+    background-color: #000;
+    background-image:
+        radial-gradient(circle at 20% 30%, rgba(255, 255, 255, .9) 1px, transparent 2px),
+        radial-gradient(circle at 80% 10%, rgba(255, 255, 255, .8) 1px, transparent 2px),
+        radial-gradient(circle at 50% 70%, rgba(255, 255, 255, .7) 2px, transparent 3px),
+        radial-gradient(circle at 10% 80%, rgba(255, 255, 255, .9) 1px, transparent 2px);
+
+    background-size:
+        300px 300px,
+        450px 450px,
+        600px 600px,
+        800px 800px;
+}
+
 .logoTitulo {
     width: 650px;
     max-width: 90%;
     height: auto;
 }
 
-.auraModal {
-    min-height: 100vh;
-    background: black;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 80px 20px;
+.tt {
+    width: 450px;
+    max-width: 90%;
+    height: auto;
 }
 
-.containerBeta {
-    width: 100%;
-    max-width: 500px;
-}
-
-.tituloTexto {
-    color: white;
-    font-size: 2rem;
-    text-align: center;
-    margin-bottom: 30px;
-}
-
+/* Mudar, foi IA do enzo */
 .formulario {
     width: 100%;
     display: flex;
@@ -100,8 +102,10 @@
     text-align: center;
 }
 
+/*------------------------------------------------*/
+
 .historia {
-    background: black;
+    background: transparent;
     padding: 80px 10%;
 }
 
@@ -117,6 +121,11 @@
     gap: 40px;
     align-items: center;
     margin-bottom: 80px;
+}
+
+.invertido {
+    flex-direction: row-reverse;
+    /* Faz a inversão entre a imagem e texto */
 }
 
 .historiaTexto {
@@ -141,4 +150,83 @@
     border-radius: 10px;
     background: rgba(255, 255, 255, 0.05);
     flex-shrink: 0;
+}
+
+.principais {
+    padding: 60px 20px;
+    text-align: center;
+}
+
+.principais h2 {
+    margin-bottom: 30px;
+    color: white;
+}
+
+.carrossel {
+    overflow: hidden;
+    width: 100%;
+}
+
+.carrossel1 {
+    display: flex;
+    gap: 25px;
+    width: max-content;
+    animation: deslizar 30s linear infinite;
+    /* transição */
+}
+
+.blocos {
+    width: 280px;
+    background: white;
+    border-radius: 12px;
+    overflow: hidden;
+    flex-shrink: 0;
+}
+
+.blocos img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+}
+
+.blocos h3 {
+    margin: 12px 0 8px;
+}
+
+.blocos p {
+    padding: 0 15px 15px;
+    font-size: 0.95rem;
+    line-height: 1.4;
+}
+
+/* Apartir de dois keyframes, vai ocorrer uma transição entre eles */
+@keyframes deslizar {
+    from {
+        transform: translateX(0);
+    }
+
+    to {
+        transform: translateX(-50%);
+    }
+}
+
+.licencaModal {
+    min-height: 100vh;
+    background: transparent;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 80px 20px;
+}
+
+.container2 {
+    width: 100%;
+    max-width: 500px;
+}
+
+.tituloTexto {
+    color: white;
+    font-size: 2rem;
+    text-align: center;
+    margin-bottom: 30px;
 }
