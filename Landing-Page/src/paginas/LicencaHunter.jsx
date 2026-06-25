@@ -11,6 +11,7 @@ export function LicencaHunter() {
   
   const [nome, setNome]  = useState('');
   const [idade, setIdade] = useState('');
+  const [nenEscolhido, setNenEscolhido] = useState('');
   const nen = ["Emissão", "Conjuração", "Transmutação", "Especialização", "Intensificação", "Manipulação"];
 
     /* ALEATORIZAR VETOR E ESCOLHER 1 ITEM
@@ -20,9 +21,6 @@ export function LicencaHunter() {
     const itemSorteado = frutas[indiceAleatorio];
     */
 
-    const nenAleatorio = Math.floor(Math.random() * nen.length);
-    const nenEscolhido = nen[nenAleatorio];
-  
   const [modalMensagemVisivel, setModalMensagemVisivel] = useState(false);
 
   // ERRO CORRIGIDO: Função onBack não estava definida

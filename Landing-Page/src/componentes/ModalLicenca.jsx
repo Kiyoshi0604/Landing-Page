@@ -10,7 +10,12 @@ export function ModalLicenca({nome, idade, nen, visivel, onClose}){
         <div className={estilos.overlay} onClick={onClose}>
             <div className={estilos.conteiner} onClick={(e) => e.stopPropagation()}>
                 <h2 className={estilos.titulo}>Licença Hunter Gerada</h2>
-                
+
+                <div className={estilos.topInfo}>
+                    <span>Registro Hunter</span>
+                    <span>Carteira Oficial</span>
+                </div>
+
                 <div className={estilos.licencaInfo}>
                     <p className={estilos.label}>Nome:</p>
                     <p className={estilos.nome}>{nome}</p>
