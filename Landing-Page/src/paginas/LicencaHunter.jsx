@@ -4,22 +4,24 @@ import { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 // ERRO CORRIGIDO: Importar ModalLicenca para exibir a licença com os dados
 import { ModalLicenca } from '../componentes/ModalLicenca'
+import fd1 from '../assets/img/FD1.png'
+import fd2 from '../assets/img/FD2.jpg'
 
 export function LicencaHunter() {
   // ERRO: navigate não estava sendo importado corretamente
   const navigate = useNavigate();
-  
-  const [nome, setNome]  = useState('');
+
+  const [nome, setNome] = useState('');
   const [idade, setIdade] = useState('');
   const [nenEscolhido, setNenEscolhido] = useState('');
   const nen = ["Emissão", "Conjuração", "Transmutação", "Especialização", "Intensificação", "Manipulação"];
 
-    /* ALEATORIZAR VETOR E ESCOLHER 1 ITEM
-    const frutas = ["Maçã", "Banana", "Laranja", "Uva"];
-                            arredondar   aleatorio     quantidade de espacos no vetor
-    const indiceAleatorio = Math.floor(Math.random() * frutas.length);
-    const itemSorteado = frutas[indiceAleatorio];
-    */
+  /* ALEATORIZAR VETOR E ESCOLHER 1 ITEM
+  const frutas = ["Maçã", "Banana", "Laranja", "Uva"];
+                          arredondar   aleatorio     quantidade de espacos no vetor
+  const indiceAleatorio = Math.floor(Math.random() * frutas.length);
+  const itemSorteado = frutas[indiceAleatorio];
+  */
 
   const [modalMensagemVisivel, setModalMensagemVisivel] = useState(false);
 
@@ -32,7 +34,7 @@ export function LicencaHunter() {
   const autenticarUsuario = (e) => {
     e.preventDefault();
     // Validação simples
-    if(!nome || !idade){
+    if (!nome || !idade) {
       alert('Por favor, informe nome e idade.');
     } else {
       // ERRO CORRIGIDO: Seleciona um Nen aleatório e exibe o modal
@@ -43,9 +45,11 @@ export function LicencaHunter() {
     }
   };
 
-  
+
   return (
     <div className={estilos.page}>
+      <img src={fd1} className={estilos.sup} />
+      <img src={fd2} className={estilos.inf} />
       <div className={estilos.card}>
         <div className={estilos.cardHeader}>
           <span className={estilos.licencaBadge}>Licença Hunter</span>
@@ -77,7 +81,7 @@ export function LicencaHunter() {
       </div>
 
       {/* ERRO CORRIGIDO: Adicionar ModalLicenca para exibir a licença com overlay */}
-      <ModalLicenca 
+      <ModalLicenca
         nome={nome}
         idade={idade}
         nen={nenEscolhido}

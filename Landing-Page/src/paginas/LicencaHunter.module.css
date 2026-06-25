@@ -1,0 +1,73 @@
+.page {
+    min-height: 100vh;
+    background: black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+.card {
+    width: 100%;
+    max-width: 420px;
+    background: black;
+    border: 2px solid #444;
+    border-radius: 18px;
+    padding: 35px;
+    position: relative;
+}
+
+.cardHeader {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.licencaBadge {
+    color: white;
+    font-size: 2rem;
+    font-weight: bold;
+}
+
+.card form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.card input {
+    padding: 12px;
+    border: 1px solid #555;
+    border-radius: 10px;
+    background: black;
+    color: white;
+    font-size: 1rem;
+}
+
+.card button {
+    padding: 12px;
+    border-radius: 999px;
+    background: white;
+    color: black;
+    font-size: 1rem;
+}
+
+.botao {
+    margin-top: 15px;
+    width: 100%;
+}
+
+.sup {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    width: 250px;
+    height: auto;
+}
+
+.inf {
+    position: absolute;
+    bottom: 5px;
+    left: 10px;
+    width: 400px;
+    height: auto;
+}

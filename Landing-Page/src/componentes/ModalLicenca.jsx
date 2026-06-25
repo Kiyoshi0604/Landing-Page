@@ -1,14 +1,19 @@
 import estilos from '../componentes/ModalLicenca.module.css'
+import licenca from "../assets/img/licenca.png"
 
 // ERRO CORRIGIDO: Adicionar props visivel e onClose para funcionar com overlay
-export function ModalLicenca({nome, idade, nen, visivel, onClose}){
-    
+export function ModalLicenca({ nome, idade, nen, visivel, onClose }) {
+
     if (!visivel) return null
 
-    return(
+    return (
         // ERRO CORRIGIDO: Adicionar overlay que sobreponha o formulário
         <div className={estilos.overlay} onClick={onClose}>
-            <div className={estilos.conteiner} onClick={(e) => e.stopPropagation()}>
+            <div
+                className={estilos.conteiner}
+                style={{ backgroundImage: `url(${licenca})` }}
+                onClick={(e) => e.stopPropagation()}
+            >
                 <h2 className={estilos.titulo}>Licença Hunter Gerada</h2>
 
                 <div className={estilos.topInfo}>
@@ -31,7 +36,7 @@ export function ModalLicenca({nome, idade, nen, visivel, onClose}){
                     <p className={estilos.nen}>{nen}</p>
                 </div>
 
-                <button 
+                <button
                     className={estilos.botao}
                     onClick={onClose}
                 >

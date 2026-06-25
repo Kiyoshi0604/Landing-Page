@@ -13,6 +13,7 @@ import h8 from '../assets/img/H8.webp'
 import h9 from '../assets/img/H9.jpg'
 import tt from '../assets/img/TT.png'
 import tt2 from '../assets/img/TT2.png'
+import tt3 from '../assets/img/TT3.png'
 
 export function LandingPage() {
   // ERRO CORRIGIDO: Adicionar useNavigate para navegação com React Router
@@ -140,12 +141,8 @@ export function LandingPage() {
 
         </section>
         <section className={estilos.licencaModal}>
+          <img src={tt3} className={`${estilos.tt} ${estilos.ttLicenca}`} />
           <div className={estilos.container2}>
-            <h1 className={estilos.tituloTexto}>
-              Licença Hunter
-            </h1>
-
-
             <div className={estilos.nav}>
               {/* ERRO CORRIGIDO: Usar onClick com navigate em vez de href para funcionar com React Router */}
               <a
