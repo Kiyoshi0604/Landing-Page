@@ -1,6 +1,7 @@
 import estilos from './Landing-Page.module.css'
 // ERRO CORRIGIDO: Importar useNavigate para funcionar com React Router
 import { useNavigate } from 'react-router-dom'
+import { FaArrowUp } from "react-icons/fa"
 import logo from '../assets/img/logo.png'
 import h1 from '../assets/img/H1.jpeg'
 import h2 from '../assets/img/H2.webp'
@@ -14,6 +15,8 @@ import h9 from '../assets/img/H9.jpg'
 import tt from '../assets/img/TT.png'
 import tt2 from '../assets/img/TT2.png'
 import tt3 from '../assets/img/TT3.png'
+import nen from '../assets/img/tipos.webp'
+import tt4 from '../assets/img/TT4.png'
 
 export function LandingPage() {
   // ERRO CORRIGIDO: Adicionar useNavigate para navegação com React Router
@@ -21,6 +24,7 @@ export function LandingPage() {
 
   return (
     <div className={estilos.container}>
+      <div className={estilos.container} id="topo"></div>
       <section className={estilos.inicio}>
         <img
           src={logo}
@@ -92,48 +96,48 @@ export function LandingPage() {
                 <div className={estilos.blocos}>
                   <img src={h5} />
                   <h3>Gon Freecss</h3>
-                  <p>67.</p>
+                  <p>Um garoto otimista e corajoso que sonha em encontrar seu pai, o lendário Hunter Ging Freecss.</p>
                 </div>
 
                 <div className={estilos.blocos}>
                   <img src={h6} />
                   <h3>Killua Zoldyck</h3>
-                  <p>Exala.</p>
+                  <p>Ex-assassino da família Zoldyck, é inteligente, veloz e o melhor amigo de Gon.</p>
                 </div>
 
                 <div className={estilos.blocos}>
                   <img src={h7} />
                   <h3>Kurapika</h3>
-                  <p>Aurudo.</p>
+                  <p>Último sobrevivente do Clã Kurta, busca justiça contra a Trupe Fantasma.</p>
                 </div>
 
                 <div className={estilos.blocos}>
                   <img src={h8} />
                   <h3>Leorio</h3>
-                  <p>bizarro.</p>
+                  <p>Aspirante a médico, luta para ajudar pessoas e valoriza acima de tudo seus amigos..</p>
                 </div>
                 <div className={estilos.blocos}>
                   <img src={h5} />
                   <h3>Gon Freecss</h3>
-                  <p>67.</p>
+                  <p>Um garoto otimista e corajoso que sonha em encontrar seu pai, o lendário Hunter Ging Freecss.</p>
                 </div>
 
                 <div className={estilos.blocos}>
                   <img src={h6} />
                   <h3>Killua Zoldyck</h3>
-                  <p>Exala.</p>
+                  <p>Ex-assassino da família Zoldyck, é inteligente, veloz e o melhor amigo de Gon.</p>
                 </div>
 
                 <div className={estilos.blocos}>
                   <img src={h7} />
                   <h3>Kurapika</h3>
-                  <p>Aurudo.</p>
+                  <p>Último sobrevivente do Clã Kurta, busca justiça contra a Trupe Fantasma.</p>
                 </div>
 
                 <div className={estilos.blocos}>
                   <img src={h8} />
                   <h3>Leorio</h3>
-                  <p>bizarro.</p>
+                  <p>Aspirante a médico, luta para ajudar pessoas e valoriza acima de tudo seus amigos.</p>
                 </div>
               </div>
             </div>
@@ -155,7 +159,25 @@ export function LandingPage() {
             </div>
           </div>
         </section>
+        <section className={estilos.secaoNen}>
+          <div className={estilos.tituloNen}>
+            <img src={tt4} className={`${estilos.tt} ${estilos.ttLicenca}`} />
+          </div>
+          <img src={nen} className={estilos.nen} />
+        </section>
       </div>
+      <footer className={estilos.rodape}>
+        <p>© 2026 João Paulo e Enzo Basso. Todos os direitos reservados.</p>
+
+        <p>
+          Este site foi desenvolvido apenas para fins educacionais e de
+          entretenimento.
+        </p>
+        <a href="#topo" className={estilos.botaoTopo}>
+          <FaArrowUp />
+        </a>
+      </footer>
+
     </div>
   );
 }

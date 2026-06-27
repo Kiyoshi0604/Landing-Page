@@ -162,11 +162,9 @@
 .licencaModal {
     display: flex;
     flex-direction: column;
-    /* imagem em cima */
     justify-content: center;
     align-items: center;
     gap: 25px;
-    /* espaço entre o título e o modal */
     min-height: 100vh;
     padding: 20px;
 }
@@ -207,4 +205,69 @@
 .ttLicenca {
     width: 550px;
     max-width: 90%;
+}
+
+.secaoNen {
+    padding: 60px 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.tituloNen {
+    margin-bottom: 40px;
+}
+
+.nen {
+    width: 100%;
+    max-width: 650px;
+    border-radius: 20px;
+    border: 4px solid white;
+}
+
+.rodape {
+    width: 100%;
+    background: black;
+    border-top: 2px solid #2b2b2b;
+    padding: 30px 20px;
+    text-align: center;
+    color: white;
+}
+
+.rodape p {
+    margin: 8px 0;
+    font-size: 0.95rem;
+    line-height: 1.6;
+}
+
+.rodape p:first-child {
+    color: white;
+    font-weight: bold;
+}
+
+html {
+    scroll-behavior: smooth;
+    /* rolagem da página suave*/
+}
+
+.botaoTopo {
+    position: fixed;
+    right: 25px;
+    bottom: 25px;
+    width: 55px;
+    height: 55px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: black;
+    color: white;
+    font-size: 28px;
+    border-radius: 50%;
+    transition: .3s;
+}
+
+.botaoTopo:hover {
+    background: white;
+    color: black;
+    transform: translateY(-5px) scale(1.08);
 }

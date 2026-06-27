@@ -14,27 +14,9 @@ export function ModalLicenca({ nome, idade, nen, visivel, onClose }) {
                 style={{ backgroundImage: `url(${licenca})` }}
                 onClick={(e) => e.stopPropagation()}
             >
-                <h2 className={estilos.titulo}>Licença Hunter Gerada</h2>
-
-                <div className={estilos.topInfo}>
-                    <span>Registro Hunter</span>
-                    <span>Carteira Oficial</span>
-                </div>
-
-                <div className={estilos.licencaInfo}>
-                    <p className={estilos.label}>Nome:</p>
-                    <p className={estilos.nome}>{nome}</p>
-                </div>
-
-                <div className={estilos.licencaInfo}>
-                    <p className={estilos.label}>Idade:</p>
-                    <p className={estilos.idade}>{idade}</p>
-                </div>
-
-                <div className={estilos.licencaInfo}>
-                    <p className={estilos.label}>Tipo Nen:</p>
-                    <p className={estilos.nen}>{nen}</p>
-                </div>
+                <span className={estilos.nome}>{nome}</span>
+                <span className={estilos.idade}>{idade}</span>
+                <span className={estilos.nen}>{nen}</span>
 
                 <button
                     className={estilos.botao}
