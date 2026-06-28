@@ -1,4 +1,6 @@
-/*
+
 :root{
-  Palheta de cor  
+  --PrimariaPreto: black;
+  --SecundariaBranco: white;
+  --TerciariaCinza: #ffffff26;
 }

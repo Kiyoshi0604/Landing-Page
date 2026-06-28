@@ -1,10 +1,11 @@
+/*camada que fica sobre*/
 .overlay {
     position: fixed;
     inset: 0;
     display: flex;
     justify-content: center;
     align-items: center;
-    background: rgba(0, 0, 0, 0.8);
+    background: var(--PrimariaPreto);
 }
 
 .conteiner {
@@ -22,7 +23,7 @@
     position: absolute;
     left: 95px;
     margin: 0;
-    color: black;
+    color: var(--PrimariaPreto);
     font-weight: bold;
     letter-spacing: 1px;
 }
